@@ -1,36 +1,39 @@
 import java.util.*;
-public class Palindrome {
+class Palindrome{
     public static void main(String[] args){
-  StringCheck c =new StringCheck();
-  c.SetData();
-  boolean res=c.isPalindrome();
-  if(res==true){
-    System.out.println("Input string is palindrome");
-  }
-  else{ System.out.println("Input string is not palindrome");}
- 
+        Check ch = new Check();
+        ch.getData();
+        ch.CheckPalindrome();
     }
 }
-class StringCheck{
-    private String str;
-    public void SetData(){
-        Scanner sc= new Scanner(System.in);
-        System.out.println("Enter a string");
-        str= sc.nextLine();
-        sc.close();
-    }
-    public boolean isPalindrome()
-    {
-        String rev="";
-        for(int i=str.length()-1;i>=0;i--)
-        {
-            char ext=str.charAt(i);
-            rev=rev+ext;
-        }
-        if(rev.equalsIgnoreCase(str)){
-            return(true);
-        }
-        else {return(false);}
-    }
+class Check{
     
+ public void getData(){
+    
+    Scanner sc=new Scanner(System.in);
+    System.out.println("Enter the number");
+      number=sc.nextInt();
+       sc.close();
+ }
+ int rev=0;
+      int  ext, org,number;
+public void CheckPalindrome(){
+    
+    org=number;
+    while(number!=0){
+        ext=number%10;
+        rev=rev*10+ext;
+        number=number/10;
+    }
+    if(org==rev){
+        System.out.println("The entered number is a Palindrome");
+    }
+else{
+    System.out.println("The entered number is not a Palindrome");
+}
+
+    
+
+}
+
 }
