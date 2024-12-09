@@ -1,3 +1,4 @@
+//lab1
 import java.util.*;
 public class Alternate {
     public static void main(String[] args){
